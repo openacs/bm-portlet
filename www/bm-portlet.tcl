@@ -38,6 +38,6 @@ set scoped_p [ad_decode $config(scoped_p) t 1 0]
 set admin_p [permission::permission_p -object_id $package_id -privilege admin]
 
 set spam_name [bulk_mail::parameter -parameter PrettyName -default Spam]
-set spam_url [site_node::get_url_from_object_id -object_id $package_id]
+set spam_url [lindex [site_node::get_url_from_object_id -object_id $package_id] 0]
 
 ad_return_template
