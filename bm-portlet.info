@@ -8,12 +8,9 @@
     <singleton-p>t</singleton-p>
 
     <version name="0.1a" url="http://openacs.org/repository/download/apm/bm-portlet-0.1a.apm">
-    <database-support>
-        <database>oracle</database>
-        <database>postgresql</database>
-    </database-support>
-        <owner url="mailto:yon@openforce.net">Yonatan Feldman</owner>
-        <vendor url="http://openforce.net/">OpenForce, Inc.</vendor>
+        <owner url="http://openacs.org">OpenACS</owner>
+        <release-date>2003-11-10</release-date>
+        <vendor url="http://openacs.org/">OpenACS</vendor>
 
         <provides url="bm-portlet" version="0.1a"/>
         <requires url="bulk-mail" version="0.1d"/>
