@@ -55,13 +55,13 @@ namespace eval bm_portlet {
     } {
         add the portlet element to the given portal
     } {
-        return [portal::add_element_or_append_id \
+        return [portal::add_element_parameters \
             -portal_id $portal_id \
             -page_name $page_name \
             -pretty_name [get_pretty_name] \
             -portlet_name [get_my_name] \
             -key package_id \
-            -value_id $package_id \
+            -value $package_id \
             -force_region $force_region \
             -extra_params $extra_params
         ]
@@ -73,7 +73,7 @@ namespace eval bm_portlet {
     } {
         remove the portal element from the given portal
     } {
-        portal::remove_element_or_remove_id \
+        portal::remove_element_parameters \
             -portal_id $portal_id \
             -portlet_name [get_my_name] \
             -key package_id \
