@@ -38,7 +38,7 @@ namespace eval bm_portlet {
 
     ad_proc -public get_pretty_name {
     } {
-        return [parameter::get -parameter pretty_name]
+        return [parameter::get_from_package_key -package_key [my_package_key] -parameter pretty_name]
     }
 
     ad_proc -public link {
