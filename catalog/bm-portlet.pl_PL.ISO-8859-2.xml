@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<message_catalog package_key="bm-portlet" package_version="0.1a" locale="pl_PL" charset="ISO-8859-2">
-
-  <msg key="New_spam_name">Nowy %spam_name%</msg>
-  <msg key="pretty_name">Poczta Hurtowa</msg>
-  <msg key="spam_name_History">Historia %spam_name% </msg>
-</message_catalog>

@@ -1,7 +1,0 @@
-<?xml version="?.?"?>
-<message_catalog package_key="bm-portlet" package_version="?.?a" locale="AR_EG" charset="ISO-????-?">
-
-  <msg key="New_spam_name">ÌÏêÏ %spam_name%</msg>
-  <msg key="pretty_name">ÈÑêÏï ÇäÏÙÇêÇÊ</msg>
-  <msg key="spam_name_History">%spam_name% ÊÇÑêÎ    </msg>
-</message_catalog>
