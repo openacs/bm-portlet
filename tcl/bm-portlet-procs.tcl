@@ -38,7 +38,7 @@ namespace eval bm_portlet {
 
     ad_proc -public get_pretty_name {
     } {
-        return [parameter::get -parameter pretty_name -default "Bulk Mail"]
+        return [parameter::get -parameter pretty_name]
     }
 
     ad_proc -public link {
