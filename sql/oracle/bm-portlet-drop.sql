@@ -36,7 +36,7 @@ begin
     end;
 
     if ds_id is not null then
-        portal_datasource.delete(ds_id);
+        portal_datasource.del(ds_id);
     end if;
 
     foo := acs_sc_impl.delete_alias (
@@ -81,12 +81,12 @@ begin
         'RemoveSelfFromPage'
     );
 
-    acs_sc_binding.delete (
+    acs_sc_binding.del (
         contract_name => 'portal_datasource',
         impl_name => 'bm_portlet'
     );
 
-    acs_sc_impl.delete (
+    acs_sc_impl.del (
         'portal_datasource',
         'bm_portlet'
     );

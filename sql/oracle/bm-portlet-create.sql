@@ -92,6 +92,7 @@ begin
     foo := acs_sc_impl.new(
         impl_contract_name => 'portal_datasource',
         impl_name => 'bm_portlet',
+	impl_pretty_name => 'Bulk mail portlet',
         impl_owner_name => 'bm_portlet'
     );
 
