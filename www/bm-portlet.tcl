@@ -35,9 +35,9 @@ array set config $cf
 set user_id [ad_conn user_id]
 set package_id $config(package_id)
 set scoped_p [ad_decode $config(scoped_p) t 1 0]
-set admin_p [permission::permission_p -object_id $package_id -privilege "admin"]
+set admin_p [permission::permission_p -object_id $package_id -privilege admin]
 
 set spam_name [bulk_mail::parameter -parameter PrettyName -default Spam]
-set spam_url [site_nodes::get_url_from_package_id -package_id $package_id]
+set spam_url [site_node::get_url_from_object_id -object_id $package_id]
 
 ad_return_template
