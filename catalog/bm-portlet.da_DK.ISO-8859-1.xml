@@ -3,5 +3,5 @@
 
   <msg key="New_spam_name">Ny %spam_name%</msg>
   <msg key="pretty_name">Massemail</msg>
-  <msg key="spam_name_History">Historie til %spam_name% </msg>
+  <msg key="spam_name_History">Historik til %spam_name% </msg>
 </message_catalog>
