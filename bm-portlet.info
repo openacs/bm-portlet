@@ -30,7 +30,7 @@
             <file type="content_page" path="www/bm-portlet.tcl"/>
         </files>
         <parameters>
-            <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="PrettyName"  default="#news-portlet.pretty_name#" description="Name of the bulk mail portlet to display everywhere"/>
+            <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="PrettyName"  default="#bm-portlet.pretty_name#" description="Name of the bulk mail portlet to display everywhere"/>
         </parameters>
 
     </version>
