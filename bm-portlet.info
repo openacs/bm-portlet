@@ -14,7 +14,7 @@
 
         <provides url="bm-portlet" version="2.2.1a1"/>
         <requires url="bulk-mail" version="0.5.1d7"/>
-        <requires url="new-portal" version="2.2.0a1"/>
+        <requires url="new-portal" version="2.2.1a1"/>
 
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="pretty_name"  default="#bm-portlet.pretty_name#" description="Name of the bulk mail portlet to display everywhere"/>
