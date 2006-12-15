@@ -19,6 +19,6 @@
 %>
 
 <ul>
-  <li><a href="@spam_url@">#bm-portlet.spam_name_History#</a></li>
-  <li><a href="spam-recipients?referer=one-community-admin">#bm-portlet.New_spam_name#</a></li>
+  <li><a href="@spam_url@" title="#bm-portlet.spam_name_History#">#bm-portlet.spam_name_History#</a></li>
+  <li><a href="spam-recipients?referer=one-community-admin" title="#bm-portlet.New_spam_name#">#bm-portlet.New_spam_name#</a></li>
 </ul>

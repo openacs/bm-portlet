@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="bm-portlet" package_version="2.2.0b2" locale="ca_ES" charset="ISO-8859-1">
+<message_catalog package_key="bm-portlet" package_version="2.2.0" locale="ca_ES" charset="ISO-8859-1">
 
   <msg key="New_spam_name">Nou %spam_name%</msg>
   <msg key="pretty_name">Correu massiu</msg>
