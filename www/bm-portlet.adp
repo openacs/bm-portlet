@@ -18,7 +18,14 @@
 
 %>
 
+<if @config.shaded_p@ ne "t">
 <ul>
   <li><a href="@spam_url@" title="#bm-portlet.spam_name_History#">#bm-portlet.spam_name_History#</a></li>
   <li><a href="spam-recipients?referer=one-community-admin" title="#bm-portlet.New_spam_name#">#bm-portlet.New_spam_name#</a></li>
 </ul>
+</if>
+<else>
+  <small>
+    #new-portal.when_portlet_shaded#
+  </small>
+</else>
