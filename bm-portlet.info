@@ -7,14 +7,14 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
 
-    <version name="2.5.0a1" url="http://openacs.org/repository/download/apm/bm-portlet-2.5.0a1.apm">
+    <version name="2.5.0b1" url="http://openacs.org/repository/download/apm/bm-portlet-2.5.0b1.apm">
         <owner url="http://openacs.org">OpenACS</owner>
         <release-date>2009-07-22</release-date>
         <vendor url="http://openacs.org">OpenACS</vendor>
 
-        <provides url="bm-portlet" version="2.5.0a1"/>
+        <provides url="bm-portlet" version="2.5.0b1"/>
         <requires url="bulk-mail" version="0.5.1d7"/>
-        <requires url="new-portal" version="2.5.0a1"/>
+        <requires url="new-portal" version="2.5.0b1"/>
 
         <parameters>
             <parameter datatype="string"  min_n_values="1"  max_n_values="1"  name="pretty_name"  default="#bm-portlet.pretty_name#" description="Name of the bulk mail portlet to display everywhere"/>
