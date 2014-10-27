@@ -27,76 +27,83 @@
 --
 
 
-create function inline_0 ()
-returns integer as '
-declare
+
+
+--
+-- procedure inline_0/0
+--
+CREATE OR REPLACE FUNCTION inline_0(
+
+) RETURNS integer AS $$
+DECLARE
   ds_id 	portal_datasources.datasource_id%TYPE;
-begin
+BEGIN
 	ds_id = portal_datasource__new(
-        		''bm_portlet'',
-        		''Displays spam info for the given package''
+        		'bm_portlet',
+        		'Displays spam info for the given package'
 	);
 
 perform portal_datasource__set_def_param(
         ds_id,							--datasource_id
-        ''t'',							--config_required_p
-        ''t'',							--configured_p
-        ''shadeable_p'',				--key
-        ''t''							--value
+        't',							--config_required_p
+        't',							--configured_p
+        'shadeable_p',				--key
+        't'							--value
 );
 
 perform portal_datasource__set_def_param(
         ds_id,
-        ''t'',
-        ''t'',
-        ''hideable_p'',
-        ''t''
+        't',
+        't',
+        'hideable_p',
+        't'
 );
 
 perform portal_datasource__set_def_param(
         ds_id,
-        ''t'',
-        ''t'',
-        ''user_editable_p'',
-        ''f''
+        't',
+        't',
+        'user_editable_p',
+        'f'
 );
 
 perform portal_datasource__set_def_param(
 	ds_id,
-	''t'',
-        ''t'',
-        ''shaded_p'',
-        ''f''
+	't',
+        't',
+        'shaded_p',
+        'f'
 );
 
 
 perform portal_datasource__set_def_param(
         ds_id,
-        ''t'',
-        ''t'',
-        ''link_hideable_p'',
-        ''t''
+        't',
+        't',
+        'link_hideable_p',
+        't'
 );
 
 perform portal_datasource__set_def_param(
         ds_id,
-        ''t'',
-        ''f'',
-        ''package_id'',
-        ''''
+        't',
+        'f',
+        'package_id',
+        ''
 );
 
 perform portal_datasource__set_def_param(
 	ds_id,
- 	''t'',
-  	''f'',
-   	''scoped_p'',
-    	''t''
+ 	't',
+  	'f',
+   	'scoped_p',
+    	't'
 );
 
 return 0;
 
-end; ' language 'plpgsql';
+END; 
+$$ LANGUAGE plpgsql;
 
 select inline_0 ();
 
