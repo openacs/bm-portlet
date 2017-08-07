@@ -41,3 +41,9 @@ set spam_name [bulk_mail::parameter -localize -parameter pretty_name]
 set spam_url [lindex [site_node::get_url_from_object_id -object_id $package_id] 0]
 
 ad_return_template
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:
