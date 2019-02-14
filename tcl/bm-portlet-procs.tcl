@@ -38,10 +38,14 @@ namespace eval bm_portlet {
 
     ad_proc -public get_pretty_name {
     } {
+        Gets portlet pretty name.
+    } {
         return [parameter::get_from_package_key -package_key [my_package_key] -parameter pretty_name]
     }
 
     ad_proc -public link {
+    } {
+        Gets portlet link (empty).
     } {
         return ""
     }
@@ -53,7 +57,7 @@ namespace eval bm_portlet {
         {-extra_params ""}
         {-force_region ""}
     } {
-        add the portlet element to the given portal
+        Add the portlet element to the given portal.
     } {
         return [portal::add_element_parameters \
             -portal_id $portal_id \
@@ -71,7 +75,7 @@ namespace eval bm_portlet {
         {-portal_id:required}
         {-package_id:required}
     } {
-        remove the portal element from the given portal
+        Remove the portal element from the given portal.
     } {
         portal::remove_element_parameters \
             -portal_id $portal_id \
@@ -83,7 +87,7 @@ namespace eval bm_portlet {
     ad_proc -public show {
          cf
     } {
-        shoe the portal element
+        Show the portal element.
     } {
         portal::show_proc_helper \
             -package_key [my_package_key] \
