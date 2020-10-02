@@ -77,6 +77,18 @@ aa_register_case -procs {
     }
 }
 
+aa_register_case -procs {
+        bm_portlet::get_pretty_name
+    } -cats {
+        api
+        production_safe
+    } bm_portlet_pretty_name {
+        Test get_pretty_name proc.
+} {
+    set pretty_name [parameter::get_from_package_key -package_key [bm_portlet::my_package_key] -parameter pretty_name]
+    aa_equals "bm_portlet pretty name" "[bm_portlet::get_pretty_name]" "$pretty_name"
+}
+
 # Local variables:
 #    mode: tcl
 #    tcl-indent-level: 4
