@@ -74,12 +74,14 @@ namespace eval bm_portlet {
     ad_proc -public remove_self_from_page {
         {-portal_id:required}
         {-package_id:required}
+        {-extra_params ""}
     } {
         Remove the portal element from the given portal.
     } {
         portal::remove_element_parameters \
             -portal_id $portal_id \
             -portlet_name [get_my_name] \
+            -value $package_id \
             -key package_id \
             -extra_params $extra_params
     }
