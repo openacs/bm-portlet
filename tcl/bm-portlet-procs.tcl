@@ -95,7 +95,22 @@ namespace eval bm_portlet {
             -package_key [my_package_key] \
             -config_list $cf
     }
-
+    
+    ad_proc -private portlet_exists_p {portal_id} {
+        Helper proc to check portal elements.         
+    } {
+        set portlet_name [get_my_name]
+        return [db_0or1row portlet_in_portal {
+            select 1 from dual where exists (
+              select 1
+                from portal_element_map pem,
+                     portal_pages pp
+               where pp.portal_id = :portal_id
+                 and pp.page_id = pem.page_id
+                 and pem.name = :portlet_name
+            )
+        }]
+    }
 }
 
 # Local variables:
