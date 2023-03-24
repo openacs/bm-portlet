@@ -7,6 +7,41 @@ ad_library {
 }
 
 aa_register_case -procs {
+    bm_portlet::show
+} -cats {
+    api
+    smoke
+} bm_render_portlet {
+    Test the rendering of the portlet
+} {
+    set package_id [db_string get_any_bm {
+        select max(package_id) from apm_packages
+        where package_key = 'bulk-mail'
+    }]
+
+    set cf [list \
+                package_id $package_id \
+                shaded_p false \
+                scoped_p false \
+               ]
+
+    set portlet [acs_sc::invoke \
+                     -contract portal_datasource \
+                     -operation Show \
+                     -impl bm_portlet \
+                     -call_args [list $cf]]
+
+    aa_log "Portlet returns: [ns_quotehtml $portlet]"
+
+    aa_false "No error was returned" {
+        [string first "Error in include template" $portlet] >= 0
+    }
+
+    aa_true "Portlet looks like HTML" \
+        [ad_looks_like_html_p $portlet]
+}
+
+aa_register_case -procs {
         bm_portlet::link
     } -cats {
         api
@@ -88,6 +123,7 @@ aa_register_case -procs {
     set pretty_name [parameter::get_from_package_key -package_key [bm_portlet::my_package_key] -parameter pretty_name]
     aa_equals "bm_portlet pretty name" "[bm_portlet::get_pretty_name]" "$pretty_name"
 }
+
 
 # Local variables:
 #    mode: tcl

@@ -86,7 +86,7 @@ namespace eval bm_portlet {
             -extra_params $extra_params
     }
 
-    ad_proc -public show {
+    ad_proc -private show {
          cf
     } {
         Show the portal element.
