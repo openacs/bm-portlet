@@ -14,31 +14,32 @@ aa_register_case -procs {
 } bm_render_portlet {
     Test the rendering of the portlet
 } {
-    set package_id [db_string get_any_bm {
-        select max(package_id) from apm_packages
-        where package_key = 'bulk-mail'
-    }]
+    aa_run_with_teardown -rollback -test_code {
+        set package_id [site_node::instantiate_and_mount \
+                            -package_key bulk-mail \
+                            -node_name __test_bm_portlet]
 
-    set cf [list \
-                package_id $package_id \
-                shaded_p false \
-                scoped_p false \
-               ]
+        set cf [list \
+                    package_id $package_id \
+                    shaded_p false \
+                    scoped_p false \
+                   ]
 
-    set portlet [acs_sc::invoke \
-                     -contract portal_datasource \
-                     -operation Show \
-                     -impl bm_portlet \
-                     -call_args [list $cf]]
+        set portlet [acs_sc::invoke \
+                         -contract portal_datasource \
+                         -operation Show \
+                         -impl bm_portlet \
+                         -call_args [list $cf]]
 
-    aa_log "Portlet returns: [ns_quotehtml $portlet]"
+        aa_log "Portlet returns: [ns_quotehtml $portlet]"
 
-    aa_false "No error was returned" {
-        [string first "Error in include template" $portlet] >= 0
+        aa_false "No error was returned" {
+            [string first "Error in include template" $portlet] >= 0
+        }
+
+        aa_true "Portlet looks like HTML" \
+            [ad_looks_like_html_p $portlet]
     }
-
-    aa_true "Portlet looks like HTML" \
-        [ad_looks_like_html_p $portlet]
 }
 
 aa_register_case -procs {
